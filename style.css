@@ -32,39 +32,63 @@ h1 {
 .card {
     padding: 20px;
     border-radius: 20px;
-    color: #111;
+    color: white;
     font-weight: 500;
     box-shadow: 0 4px 15px rgba(0,0,0,0.4);
     transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    height: 250px; /* ثابتة ارتفاع للصور */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
-
 
 .card:hover {
     transform: scale(1.05);
 }
 
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4); /* شفاف أسود لتوضيح النص */
+    border-radius: 20px;
+}
+
 .monday {
-    background: #f4c7a1;
+    background: url('images/monday.jpg') center/cover no-repeat;
 }
 
 .tuesday {
-    background: #a9d1cf;
+    background: url('images/tuesday.jpg') center/cover no-repeat;
 }
 
 .wednesday {
-    background: #d2b48c;
+    background: url('images/wednesday.jpg') center/cover no-repeat;
 }
 
 .friday {
-    background: #b9b6e5;
+    background: url('images/friday.jpg') center/cover no-repeat;
 }
+
+
+.card h2,
+.card p {
+    position: relative;
+    z-index: 1;
+}
+
 
 .footer {
     margin-top: 30px;
     font-size: 16px;
 }
 
-/* WhatsApp button */
+
 .whatsapp {
     display: block;
     background: #25D366;
@@ -75,6 +99,7 @@ h1 {
     margin-top: 15px;
     font-weight: bold;
 }
+
 @media (max-width: 768px) {
     .schedule {
         grid-template-columns: 1fr;
@@ -86,5 +111,9 @@ h1 {
 
     .subtitle {
         font-size: 16px;
+    }
+
+    .card {
+        height: 200px;
     }
 }
