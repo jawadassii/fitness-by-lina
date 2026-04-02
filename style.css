@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.schedule {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.card {
+    padding: 20px;
+    border-radius: 30px;
+    color: #333;
+}
+
+/* Colors like your design */
+.monday {
+    background: #f4c7a1;
+}
+
+.tuesday {
+    background: #a9d1cf;
+}
+
+.wednesday {
+    background: #d2b48c;
+}
+
+.friday {
+    background: #b9b6e5;
+}
+
+.footer {
+    margin-top: 30px;
+    font-size: 16px;
+}
