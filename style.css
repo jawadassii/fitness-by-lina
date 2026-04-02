@@ -30,22 +30,16 @@ h1 {
 }
 
 .card {
-    padding: 20px;
-    border-radius: 20px;
-    color: white;
-    font-weight: 500;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-    transition: 0.3s;
     position: relative;
     overflow: hidden;
-    height: 250px; /* ثابتة ارتفاع للصور */
+    border-radius: 20px;
+    height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-}
-
-.card:hover {
-    transform: scale(1.05);
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    transition: 0.3s;
 }
 
 .card::before {
@@ -55,39 +49,64 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.4); /* شفاف أسود لتوضيح النص */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border-radius: 20px;
+    z-index: 0;
+    transition: transform 0.5s;
 }
 
-.monday {
-    background: url('images/monday.jpg') center/cover no-repeat;
+
+.card:hover::before {
+    transform: scale(1.1); 
 }
 
-.tuesday {
-    background: url('images/tuesday.jpg') center/cover no-repeat;
+.card:hover {
+    transform: scale(1.03);
 }
 
-.wednesday {
-    background: url('images/wednesday.jpg') center/cover no-repeat;
+.card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.35);
+    border-radius: 20px;
+    z-index: 1;
 }
 
-.friday {
-    background: url('images/friday.jpg') center/cover no-repeat;
+.monday::before {
+    background-image: url('images/monday.jpg');
 }
 
+.tuesday::before {
+    background-image: url('images/tuesday.jpg');
+}
+
+.wednesday::before {
+    background-image: url('images/wednesday.jpg');
+}
+
+.friday::before {
+    background-image: url('images/friday.jpg');
+}
 
 .card h2,
 .card p {
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    color: white;
+    margin: 0;
+    padding: 0 5px;
 }
-
 
 .footer {
     margin-top: 30px;
     font-size: 16px;
 }
-
 
 .whatsapp {
     display: block;
